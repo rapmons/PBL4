@@ -45,7 +45,7 @@ public class InitConnection{
 					verify.writeUTF(width);
 					verify.writeUTF(height);
 					new SendSreen(sc,robot,rectangle);
-					
+					new ReceiveEvents(sc,robot);
 					}
 				
 			

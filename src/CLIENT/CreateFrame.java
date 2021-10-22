@@ -74,6 +74,6 @@ class CreateFrame extends Thread {
 		//Start receiving screenshots
 		new ReceiveScreen(in,cPanel);
 		//Start sending events to the client
-		//new SendEvents(cSocket,cPanel,width,height);
+		new SendEvents(cSocket,cPanel,width,height);
 	}
 }

@@ -1,5 +1,4 @@
 package Server;
-
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
@@ -9,7 +8,7 @@ import java.net.Socket;
 import javax.imageio.ImageIO;
 
 
-class SendSreen extends Thread{
+class SendScreen extends Thread{
 
 	Socket socket=null;
 	Robot robot=null;
@@ -18,7 +17,7 @@ class SendSreen extends Thread{
 	
 	OutputStream oos=null;
 
-	public SendSreen(Socket socket,Robot robot,Rectangle rect) {
+	public SendScreen(Socket socket,Robot robot,Rectangle rect) {
 	this.socket=socket;
 	this.robot=robot;
 	rectangle=rect;

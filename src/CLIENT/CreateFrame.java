@@ -1,6 +1,7 @@
 package Client;
 
 import java.awt.BorderLayout;
+import java.awt.Frame;
 import java.beans.PropertyVetoException;
 import java.io.InputStream;
 import java.net.Socket;
@@ -12,15 +13,15 @@ import java.util.zip.*;
 
 import java.io.IOException;
 
-class CreateFrame extends Thread {
+public class CreateFrame extends Thread {
 	String width="", height="";
 	private JFrame frame = new JFrame();
 
 	//JDesktopPane represents the main container that will contain all connected clients' screens
 
-	private JDesktopPane desktop = new JDesktopPane();
+
 	private Socket cSocket = null;
-	private JInternalFrame interFrame = new JInternalFrame("Server Screen", true, true, true);
+	
 	private JPanel cPanel = new JPanel();
 
 	public CreateFrame(Socket cSocket, String width, String height) {
@@ -34,28 +35,22 @@ class CreateFrame extends Thread {
 	//Draw GUI per each connected client
 
 	public void drawGUI() {
-		frame.add(desktop, BorderLayout.CENTER);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		//Show thr frame in maximized state
-	
-		frame.setExtendedState(frame.getExtendedState()|JFrame.MAXIMIZED_BOTH);		//CHECK THIS LINE
-		frame.setVisible(true);
-		interFrame.setLayout(new BorderLayout());
-		interFrame.getContentPane().add(cPanel, BorderLayout.CENTER);
-		interFrame.setSize(100,100);
-		desktop.add(interFrame);
-
-		try {
-			//Initially show the internal frame maximized
-			interFrame.setMaximum(true);
-			}catch (PropertyVetoException ex) { 
-				ex.printStackTrace();
-		}
-
+		
 		//This allows to handle KeyListener events
 		cPanel.setFocusable(true);
-		interFrame.setVisible(true);
+		frame.setSize(1930, 1050);
+
+        cPanel.setSize(1930, 1050);
+
+       frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+
+      
+
+       frame.add(cPanel);
+
+       frame.pack();
+
+       frame.setVisible(true);
 		
 	}
 

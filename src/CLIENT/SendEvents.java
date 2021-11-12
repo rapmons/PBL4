@@ -25,7 +25,7 @@ class SendEvents implements KeyListener, MouseMotionListener, MouseListener{
 		this.width = width;
 		this.height = height;
 		w = Double.valueOf(width.trim()).doubleValue();
-		h = Double.valueOf(width.trim()).doubleValue();
+		h = Double.valueOf(height.trim()).doubleValue();
 
 		//Associate event listeners to the panel
 

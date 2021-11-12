@@ -1,6 +1,7 @@
 package Server;
 
 import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
@@ -30,10 +31,15 @@ class ReceiveEvents extends Thread{
 			int command = scanner.nextInt();
 			switch(command){
 					case-1:
-					robot.mousePress(scanner.nextInt());
+						int mask = InputEvent.getMaskForButton(1);
+                        robot.mousePress(mask);
+                       
 					break;
 					case-2:
-					robot.mouseRelease(scanner.nextInt());
+				    int mask1 = InputEvent.getMaskForButton(2);
+	                      robot.mouseRelease(mask1);
+	                       
+	                       
 					break;
 					case-3:
 					robot.keyPress(scanner.nextInt());

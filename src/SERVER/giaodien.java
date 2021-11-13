@@ -27,7 +27,11 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import javax.swing.*;
 
+import java.awt.*;
+
+import java.awt.event.*;
 public class giaodien {
 	String verify ="";
 	private Socket cSocket = null;
@@ -193,7 +197,10 @@ public class giaodien {
 				
 				}
 				else {
-				System.out.println("enter the valid password");
+					JOptionPane.showMessageDialog(frame,
+			                "Incorrect  password",
+			                "Error Title",
+			                JOptionPane.ERROR_MESSAGE);
 				
 				}
 
